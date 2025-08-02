@@ -10,7 +10,7 @@ export interface Lesson {
   title: string;
   content: string;
   keyTakeaways?: string[];
-  quiz?: Quiz[];
+  quiz: Quiz;
 }
 
 export interface Module {
@@ -36,19 +36,17 @@ export const modules: Module[] = [
           "Focuses on proactive planning and talent pipeline building.",
           "Involves branding, sourcing, interviewing, and retention.",
         ],
-        quiz: [
-          {
-            question:
-              "How does strategic talent acquisition create a competitive advantage over traditional recruitment?",
-            options: [
-              "By focusing solely on reducing hiring costs",
-              "By prioritizing immediate hires to fill urgent roles",
-              "By building long-term talent pipelines aligned with strategic goals",
-              "By limiting employer branding to internal stakeholders",
-            ],
-            correctAnswerIndex: 2,
-          },
-        ],
+        quiz: {
+          question:
+            "What is the primary focus of Strategic Talent Acquisition?",
+          options: [
+            "Filling immediate vacancies",
+            "Building a future-ready workforce aligned with business goals",
+            "Reducing hiring costs",
+            "Improving employee retention rates",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "intro-2",
@@ -59,19 +57,17 @@ export const modules: Module[] = [
           "Reduced hiring costs and turnover.",
           "Stronger organizational culture and fit.",
         ],
-        quiz: [
-          {
-            question:
-              "Which outcome of strategic hiring most directly impacts long-term organizational competitiveness?",
-            options: [
-              "Increased employee turnover due to rapid hiring",
-              "Enhanced cultural fit leading to cohesive teams",
-              "Reduced focus on employee development",
-              "Higher initial hiring costs for top talent",
-            ],
-            correctAnswerIndex: 1,
-          },
-        ],
+        quiz: {
+          question:
+            "Which outcome of strategic hiring most directly impacts long-term organizational competitiveness?",
+          options: [
+            "Increased employee turnover due to rapid hiring",
+            "Enhanced cultural fit leading to cohesive teams",
+            "Reduced focus on employee development",
+            "Higher initial hiring costs for top talent",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "intro-3",
@@ -82,19 +78,17 @@ export const modules: Module[] = [
           "Each stage requires strategic planning.",
           "The process doesn't end with hiring.",
         ],
-        quiz: [
-          {
-            question:
-              "Why is workforce planning the critical first stage in the talent acquisition lifecycle?",
-            options: [
-              "It focuses on immediate candidate sourcing",
-              "It aligns talent needs with long-term business objectives",
-              "It prioritizes onboarding new hires",
-              "It standardizes interview processes",
-            ],
-            correctAnswerIndex: 1,
-          },
-        ],
+        quiz: {
+          question:
+            "Why is workforce planning the critical first stage in the talent acquisition lifecycle?",
+          options: [
+            "It focuses on immediate candidate sourcing",
+            "It aligns talent needs with long-term business objectives",
+            "It prioritizes onboarding new hires",
+            "It standardizes interview processes",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "intro-4",
@@ -105,19 +99,17 @@ export const modules: Module[] = [
           "Data-driven decisions enhance outcomes.",
           "Cultural alignment starts with HR leadership.",
         ],
-        quiz: [
-          {
-            question:
-              "How does HR’s strategic partnership role enhance talent acquisition outcomes?",
-            options: [
-              "By focusing exclusively on administrative tasks",
-              "By aligning hiring with business goals and leveraging data",
-              "By avoiding collaboration with other departments",
-              "By prioritizing compliance over strategic planning",
-            ],
-            correctAnswerIndex: 1,
-          },
-        ],
+        quiz: {
+          question:
+            "How does HR’s strategic partnership role enhance talent acquisition outcomes?",
+          options: [
+            "By focusing exclusively on administrative tasks",
+            "By aligning hiring with business goals and leveraging data",
+            "By avoiding collaboration with other departments",
+            "By prioritizing compliance over strategic planning",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "intro-5",
@@ -128,6 +120,17 @@ export const modules: Module[] = [
           "Stakeholders align on priorities and resources.",
           "Marketing supports consistent employer branding.",
         ],
+        quiz: {
+          question:
+            "How does collaboration with department heads enhance talent acquisition?",
+          options: [
+            "By focusing solely on administrative tasks",
+            "By aligning hiring with specific team needs and business goals",
+            "By avoiding communication with HR",
+            "By prioritizing external recruitment over internal talent",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
     ],
   },
@@ -146,19 +149,17 @@ export const modules: Module[] = [
           "Plan workforce needs accordingly.",
           "Align hiring with growth plans.",
         ],
-        quiz: [
-          {
-            question:
-              "What is the primary risk of misaligning workforce planning with business goals?",
-            options: [
-              "Streamlined hiring processes",
-              "Overstaffing with irrelevant skills",
-              "Reduced need for forecasting",
-              "Improved employee retention",
-            ],
-            correctAnswerIndex: 1,
-          },
-        ],
+        quiz: {
+          question:
+            "What is the primary risk of misaligning workforce planning with business goals?",
+          options: [
+            "Streamlined hiring processes",
+            "Overstaffing with irrelevant skills",
+            "Reduced need for forecasting",
+            "Improved employee retention",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "wp-2",
@@ -169,6 +170,17 @@ export const modules: Module[] = [
           "Identify gaps early.",
           "Enable proactive hiring.",
         ],
+        quiz: {
+          question:
+            "What is the primary benefit of forecasting future skill requirements?",
+          options: [
+            "To reduce the number of employees",
+            "To align recruitment with long-term business goals",
+            "To eliminate the need for training programs",
+            "To focus solely on immediate hiring needs",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "wp-3",
@@ -179,19 +191,17 @@ export const modules: Module[] = [
           "Reduces business risk.",
           "Improves employee retention.",
         ],
-        quiz: [
-          {
-            question:
-              "How does succession planning mitigate organizational risk most effectively?",
-            options: [
-              "By focusing only on senior leadership roles",
-              "By reducing training for existing employees",
-              "By ensuring continuity through internal talent development",
-              "By accelerating external hiring processes",
-            ],
-            correctAnswerIndex: 2,
-          },
-        ],
+        quiz: {
+          question:
+            "How does succession planning mitigate organizational risk most effectively?",
+          options: [
+            "By focusing only on senior leadership roles",
+            "By reducing training for existing employees",
+            "By ensuring continuity through internal talent development",
+            "By accelerating external hiring processes",
+          ],
+          correctAnswerIndex: 2,
+        },
       },
       {
         id: "wp-4",
@@ -202,6 +212,17 @@ export const modules: Module[] = [
           "Identify training opportunities.",
           "Guide hiring decisions.",
         ],
+        quiz: {
+          question:
+            "What is the primary purpose of skills gap analysis in workforce planning?",
+          options: [
+            "To reduce the number of employees",
+            "To identify training needs and hiring priorities",
+            "To eliminate all external hiring",
+            "To focus solely on immediate staffing needs",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "wp-5",
@@ -212,6 +233,17 @@ export const modules: Module[] = [
           "Enhances workforce agility.",
           "Reduces reactive hiring risks.",
         ],
+        quiz: {
+          question:
+            "What is the primary benefit of scenario planning in workforce management?",
+          options: [
+            "To eliminate all external hiring",
+            "To prepare for multiple potential future business conditions",
+            "To focus solely on immediate staffing needs",
+            "To reduce the number of employees",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "wp-6",
@@ -222,19 +254,17 @@ export const modules: Module[] = [
           "Access specialized skills quickly.",
           "Requires clear integration strategies.",
         ],
-        quiz: [
-          {
-            question:
-              "What challenge must organizations address when integrating gig workers into workforce planning?",
-            options: [
-              "Eliminating all full-time positions",
-              "Ensuring seamless integration with existing teams",
-              "Increasing long-term labor costs",
-              "Reducing access to specialized skills",
-            ],
-            correctAnswerIndex: 1,
-          },
-        ],
+        quiz: {
+          question:
+            "What challenge must organizations address when integrating gig workers into workforce planning?",
+          options: [
+            "Eliminating all full-time positions",
+            "Ensuring seamless integration with existing teams",
+            "Increasing long-term labor costs",
+            "Reducing access to specialized skills",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
     ],
   },
@@ -253,6 +283,16 @@ export const modules: Module[] = [
           "Culture and values should be visible.",
           "Consistency is key.",
         ],
+        quiz: {
+          question: "What is the primary benefit of a strong employer brand?",
+          options: [
+            "Increased employee turnover",
+            "Attracting aligned talent and reducing hiring costs",
+            "Eliminating the need for recruitment",
+            "Focusing solely on external marketing",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "eb-2",
@@ -263,6 +303,17 @@ export const modules: Module[] = [
           "Use multiple channels for communication bluff.",
           "Showcase benefits and culture.",
         ],
+        quiz: {
+          question:
+            "What is the primary purpose of effectively communicating an Employee Value Proposition (EVP)?",
+          options: [
+            "To reduce employee benefits",
+            "To attract and retain top talent",
+            "To eliminate the need for job postings",
+            "To focus solely on external marketing",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "eb-3",
@@ -273,6 +324,17 @@ export const modules: Module[] = [
           "Creates authentic content at scale.",
           "Requires proper guidelines and training.",
         ],
+        quiz: {
+          question:
+            "What is the primary benefit of employee advocacy in employer branding?",
+          options: [
+            "To reduce employee engagement",
+            "To create authentic, employee-driven content",
+            "To eliminate the need for job postings",
+            "To focus solely on external marketing",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "eb-4",
@@ -283,6 +345,17 @@ export const modules: Module[] = [
           "Regular measurement enables improvement.",
           "Align metrics with business goals.",
         ],
+        quiz: {
+          question:
+            "What is the primary purpose of measuring employer branding effectiveness?",
+          options: [
+            "To reduce employee benefits",
+            "To track application rates and quality of hire",
+            "To eliminate the need for job postings",
+            "To focus solely on external marketing",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "eb-5",
@@ -293,6 +366,17 @@ export const modules: Module[] = [
           "Authentic content resonates with candidates.",
           "Engagement builds candidate trust.",
         ],
+        quiz: {
+          question:
+            "What is the primary benefit of leveraging social media for employer branding?",
+          options: [
+            "To reduce employee engagement",
+            "To showcase company culture and engage candidates",
+            "To eliminate the need for job postings",
+            "To focus solely on external marketing",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "eb-6",
@@ -303,19 +387,17 @@ export const modules: Module[] = [
           "Empathy strengthens candidate perception.",
           "Actions must align with stated values.",
         ],
-        quiz: [
-          {
-            question:
-              "What is the most effective way to maintain employer brand trust during a crisis like layoffs?",
-            options: [
-              "Focusing solely on financial recovery",
-              "Minimizing communication to avoid scrutiny",
-              "Providing transparent, empathetic communication",
-              "Ignoring candidate feedback during the crisis",
-            ],
-            correctAnswerIndex: 2,
-          },
-        ],
+        quiz: {
+          question:
+            "What is the most effective way to maintain employer brand trust during a crisis like layoffs?",
+          options: [
+            "Focusing solely on financial recovery",
+            "Minimizing communication to avoid scrutiny",
+            "Providing transparent, empathetic communication",
+            "Ignoring candidate feedback during the crisis",
+          ],
+          correctAnswerIndex: 2,
+        },
       },
     ],
   },
@@ -334,6 +416,17 @@ export const modules: Module[] = [
           "Relationship-building is key.",
           "Personalization increases response rates.",
         ],
+        quiz: {
+          question:
+            "What is the primary benefit of engaging passive candidates?",
+          options: [
+            "They are always actively looking for jobs.",
+            "They often bring specialized skills and stability.",
+            "They require less personalized communication.",
+            "They are easier to hire than active candidates.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ss-2",
@@ -344,6 +437,17 @@ export const modules: Module[] = [
           "Saves time in candidate identification.",
           "Combines terms for precision.",
         ],
+        quiz: {
+          question:
+            "What is the primary benefit of using Boolean search techniques in recruitment?",
+          options: [
+            "To eliminate the need for job postings",
+            "To refine search results and save time",
+            "To focus solely on active candidates",
+            "To reduce the number of applicants",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ss-3",
@@ -354,6 +458,17 @@ export const modules: Module[] = [
           "Requires community-specific engagement strategies.",
           "Builds long-term talent pipelines.",
         ],
+        quiz: {
+          question:
+            "What is the primary benefit of engaging with specialized talent communities?",
+          options: [
+            "Access to generic job boards",
+            "Targeted access to skilled professionals",
+            "Reduced need for personalized communication",
+            "Elimination of passive candidates",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ss-4",
@@ -364,6 +479,17 @@ export const modules: Module[] = [
           "Can predict candidate success factors.",
           "Requires human oversight for best results.",
         ],
+        quiz: {
+          question:
+            "What is a primary benefit of using AI-powered tools in recruitment?",
+          options: [
+            "They eliminate the need for human recruiters.",
+            "They automate resume screening and reduce bias.",
+            "They only focus on active candidates.",
+            "They require no training to use effectively.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ss-5",
@@ -374,6 +500,16 @@ export const modules: Module[] = [
           "Incentives drive participation.",
           "Regular promotion sustains engagement.",
         ],
+        quiz: {
+          question: "What is a primary benefit of employee referral programs?",
+          options: [
+            "They eliminate the need for job postings.",
+            "They consistently yield high-quality hires.",
+            "They require no incentives to be effective.",
+            "They only work for entry-level positions.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ss-6",
@@ -384,19 +520,17 @@ export const modules: Module[] = [
           "Cultural awareness improves engagement.",
           "Compliance is critical for success.",
         ],
-        quiz: [
-          {
-            question:
-              "What is a critical factor for success in global talent sourcing?",
-            options: [
-              "Standardizing all sourcing without cultural adaptation",
-              "Limiting sourcing to one geographic region",
-              "Ensuring compliance with international regulations",
-              "Ignoring local labor market differences",
-            ],
-            correctAnswerIndex: 2,
-          },
-        ],
+        quiz: {
+          question:
+            "What is a critical factor for success in global talent sourcing?",
+          options: [
+            "Standardizing all sourcing without cultural adaptation",
+            "Limiting sourcing to one geographic region",
+            "Ensuring compliance with international regulations",
+            "Ignoring local labor market differences",
+          ],
+          correctAnswerIndex: 2,
+        },
       },
     ],
   },
@@ -415,6 +549,17 @@ export const modules: Module[] = [
           "Focuses on job-relevant skills.",
           "Improves hiring accuracy.",
         ],
+        quiz: {
+          question:
+            "What is a primary benefit of structured interviews in recruitment?",
+          options: [
+            "They allow for unstructured, free-form questions.",
+            "They reduce bias and improve hiring accuracy.",
+            "They focus solely on cultural fit.",
+            "They eliminate the need for job analysis.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ia-2",
@@ -425,6 +570,17 @@ export const modules: Module[] = [
           "STAR method structures responses.",
           "Reveals problem-solving approaches.",
         ],
+        quiz: {
+          question:
+            "What is the primary purpose of behavioral interview questions?",
+          options: [
+            "To assess technical skills only.",
+            "To predict future performance based on past behavior.",
+            "To evaluate cultural fit exclusively.",
+            "To gather demographic information.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ia-3",
@@ -435,6 +591,17 @@ export const modules: Module[] = [
           "Should mirror actual job tasks.",
           "Reduces hiring mistakes.",
         ],
+        quiz: {
+          question:
+            "What is a primary benefit of practical assessments in hiring?",
+          options: [
+            "They focus solely on cultural fit.",
+            "They provide objective measures of skills.",
+            "They eliminate the need for interviews.",
+            "They are only applicable to technical roles.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ia-4",
@@ -445,6 +612,17 @@ export const modules: Module[] = [
           "Multiple strategies exist to reduce it.",
           "Leads to more diverse, qualified hires.",
         ],
+        quiz: {
+          question:
+            "What is a key strategy for reducing unconscious bias in hiring?",
+          options: [
+            "Using unstructured interviews exclusively.",
+            "Implementing blind resume reviews.",
+            "Focusing solely on cultural fit.",
+            "Relying on gut feelings during interviews.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ia-5",
@@ -455,6 +633,17 @@ export const modules: Module[] = [
           "Must balance with diversity goals.",
           "Requires clear cultural definitions.",
         ],
+        quiz: {
+          question:
+            "What is the primary purpose of assessing cultural fit in hiring?",
+          options: [
+            "To ensure all candidates have similar backgrounds.",
+            "To evaluate if a candidate’s values align with the organization’s culture.",
+            "To focus solely on technical skills.",
+            "To reduce the number of interviews required.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ia-6",
@@ -465,19 +654,17 @@ export const modules: Module[] = [
           "Clear communication is critical online.",
           "Virtual cues require adjusted evaluation.",
         ],
-        quiz: [
-          {
-            question:
-              "What is a critical challenge in virtual interviews that impacts candidate assessment accuracy?",
-            options: [
-              "Eliminating all behavioral questions",
-              "Ensuring consistent technology setup and communication",
-              "Over-reliance on in-person cues",
-              "Reducing candidate engagement intentionally",
-            ],
-            correctAnswerIndex: 1,
-          },
-        ],
+        quiz: {
+          question:
+            "What is a critical challenge in virtual interviews that impacts candidate assessment accuracy?",
+          options: [
+            "Eliminating all behavioral questions",
+            "Ensuring consistent technology setup and communication",
+            "Over-reliance on in-person cues",
+            "Reducing candidate engagement intentionally",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
     ],
   },
@@ -495,6 +682,16 @@ export const modules: Module[] = [
           "Reflects increasingly diverse markets.",
           "Enhances company reputation.",
         ],
+        quiz: {
+          question: "What is a key benefit of diverse teams in organizations?",
+          options: [
+            "They always agree on decisions.",
+            "They reduce the need for training.",
+            "They enhance innovation and problem-solving.",
+            "They require less management oversight.",
+          ],
+          correctAnswerIndex: 2,
+        },
       },
       {
         id: "di-2",
@@ -505,6 +702,16 @@ export const modules: Module[] = [
           "Act Некрыто removes barriers.",
           "Requires ongoing commitment.",
         ],
+        quiz: {
+          question: "What is a key component of inclusive hiring practices?",
+          options: [
+            "Using unstructured interviews exclusively.",
+            "Implementing blind resume reviews.",
+            "Focusing solely on cultural fit.",
+            "Relying on gut feelings during interviews.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "di-3",
@@ -515,6 +722,17 @@ export const modules: Module[] = [
           "Build relationships with diverse communities.",
           "Traditional sourcing often misses diverse talent.",
         ],
+        quiz: {
+          question:
+            "What is a key benefit of sourcing talent from historically underrepresented groups?",
+          options: [
+            "It reduces the need for training.",
+            "It enhances innovation and market alignment.",
+            "It simplifies the hiring process.",
+            "It guarantees immediate hires.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "di-4",
@@ -525,6 +743,17 @@ export const modules: Module[] = [
           "Pipeline analysis reveals problem areas.",
           "Transparency drives accountability.",
         ],
+        quiz: {
+          question:
+            "What is a key benefit of tracking diversity metrics in hiring?",
+          options: [
+            "It guarantees immediate hires.",
+            "It helps identify barriers for underrepresented groups.",
+            "It simplifies the hiring process.",
+            "It reduces the need for training.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "di-5",
@@ -535,6 +764,17 @@ export const modules: Module[] = [
           "Remove unnecessary barriers in descriptions.",
           "Inclusivity attracts broader talent.",
         ],
+        quiz: {
+          question:
+            "What is a key benefit of crafting inclusive job descriptions?",
+          options: [
+            "They guarantee immediate hires.",
+            "They attract a broader range of applicants.",
+            "They simplify the hiring process.",
+            "They reduce the need for training.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "di-6",
@@ -545,19 +785,17 @@ export const modules: Module[] = [
           "Provide candidate-centric insights.",
           "Strengthen employer brand diversity.",
         ],
-        quiz: [
-          {
-            question:
-              "How do Employee Resource Groups (ERGs) most effectively contribute to diverse recruitment?",
-            options: [
-              "By limiting outreach to internal candidates",
-              "By replacing external sourcing strategies",
-              "By managing administrative hiring tasks",
-              "By providing insights and acting as brand ambassadors",
-            ],
-            correctAnswerIndex: 3,
-          },
-        ],
+        quiz: {
+          question:
+            "How do Employee Resource Groups (ERGs) most effectively contribute to diverse recruitment?",
+          options: [
+            "By limiting outreach to internal candidates",
+            "By replacing external sourcing strategies",
+            "By managing administrative hiring tasks",
+            "By providing insights and acting as brand ambassadors",
+          ],
+          correctAnswerIndex: 3,
+        },
       },
     ],
   },
@@ -576,6 +814,17 @@ export const modules: Module[] = [
           "Even rejected candidates can become advocates.",
           "Small touches make big differences.",
         ],
+        quiz: {
+          question:
+            "What is a key benefit of providing timely feedback to candidates?",
+          options: [
+            "It guarantees immediate hires.",
+            "It reduces the need for training.",
+            "It shows respect for candidates' efforts.",
+            "It simplifies the hiring process.",
+          ],
+          correctAnswerIndex: 2,
+        },
       },
       {
         id: "ce-2",
@@ -586,6 +835,17 @@ export const modules: Module[] = [
           "Personalization shows respect for candidates.",
           "Technology enables scale without losing warmth.",
         ],
+        quiz: {
+          question:
+            "What is a key benefit of providing consistent status updates to candidates?",
+          options: [
+            "It guarantees immediate hires.",
+            "It reduces the need for training.",
+            "It keeps candidates engaged and informed.",
+            "It simplifies the hiring process.",
+          ],
+          correctAnswerIndex: 2,
+        },
       },
       {
         id: "ce-3",
@@ -596,6 +856,17 @@ export const modules: Module[] = [
           "Skills can and should be trained.",
           "Consistency across interviews is crucial.",
         ],
+        quiz: {
+          question:
+            "What is a key benefit of training interviewers on legal compliance?",
+          options: [
+            "It guarantees immediate hires.",
+            "It reduces the need for training.",
+            "It ensures adherence to labor laws and anti-discrimination regulations.",
+            "It simplifies the hiring process.",
+          ],
+          correctAnswerIndex: 2,
+        },
       },
       {
         id: "ce-4",
@@ -606,6 +877,17 @@ export const modules: Module[] = [
           "Shows candidates their opinions matter.",
           "Enables data-driven improvements.",
         ],
+        quiz: {
+          question:
+            "What is a key benefit of conducting exit interviews with candidates who decline job offers?",
+          options: [
+            "It guarantees immediate hires.",
+            "It reduces the need for training.",
+            "It uncovers reasons for declined offers and areas for improvement.",
+            "It simplifies the hiring process.",
+          ],
+          correctAnswerIndex: 2,
+        },
       },
       {
         id: "ce-5",
@@ -616,6 +898,16 @@ export const modules: Module[] = [
           "First impressions impact retention.",
           "Alignment with goals fosters engagement.",
         ],
+        quiz: {
+          question: "What is a key benefit of a seamless onboarding process?",
+          options: [
+            "It guarantees immediate hires.",
+            "It reduces the need for training.",
+            "It sets new hires up for long-term success and engagement.",
+            "It simplifies the hiring process.",
+          ],
+          correctAnswerIndex: 2,
+        },
       },
       {
         id: "ce-6",
@@ -626,19 +918,17 @@ export const modules: Module[] = [
           "Feedback encourages future applications.",
           "Clarity respects candidate time.",
         ],
-        quiz: [
-          {
-            question:
-              "Why is empathetic rejection critical for maintaining a positive employer brand?",
-            options: [
-              "It reduces the need for future hiring",
-              "It preserves relationships for future opportunities",
-              "It eliminates candidate feedback entirely",
-              "It speeds up the rejection process",
-            ],
-            correctAnswerIndex: 1,
-          },
-        ],
+        quiz: {
+          question:
+            "Why is empathetic rejection critical for maintaining a positive employer brand?",
+          options: [
+            "It reduces the need for future hiring",
+            "It preserves relationships for future opportunities",
+            "It eliminates candidate feedback entirely",
+            "It speeds up the rejection process",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
     ],
   },
@@ -656,6 +946,16 @@ export const modules: Module[] = [
           "Quality of hire is the ultimate metric.",
           "Balance efficiency and effectiveness.",
         ],
+        quiz: {
+          question: "What is the primary purpose of tracking hiring metrics?",
+          options: [
+            "To reduce the number of applicants",
+            "To measure and optimize the recruitment process",
+            "To increase the cost of hiring",
+            "To eliminate the need for interviews",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "td-2",
@@ -666,6 +966,17 @@ export const modules: Module[] = [
           "Improves hiring accuracy over time.",
           "Requires tracking post-hire performance.",
         ],
+        quiz: {
+          question:
+            "What is a key benefit of using assessment scores in hiring?",
+          options: [
+            "They guarantee immediate hires.",
+            "They provide a standardized way to evaluate candidates.",
+            "They eliminate the need for interviews.",
+            "They increase the cost of hiring.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "td-3",
@@ -676,6 +987,17 @@ export const modules: Module[] = [
           "Continuously improves as more data is collected.",
           "Should complement human judgment.",
         ],
+        quiz: {
+          question:
+            "What is the primary benefit of using predictive analytics in hiring?",
+          options: [
+            "It guarantees immediate hires.",
+            "It predicts candidate success based on data patterns.",
+            "It eliminates the need for interviews.",
+            "It increases the cost of hiring.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "td-4",
@@ -686,6 +1008,17 @@ export const modules: Module[] = [
           "Visualizations increase impact.",
           "Connect to organizational goals.",
         ],
+        quiz: {
+          question:
+            "What is the primary goal of translating talent data into business-relevant insights?",
+          options: [
+            "To increase the number of hires",
+            "To demonstrate ROI and secure leadership support",
+            "To eliminate the need for metrics",
+            "To reduce the cost of hiring",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "td-5",
@@ -696,6 +1029,17 @@ export const modules: Module[] = [
           "Improves strategic positioning.",
           "Requires reliable industry data.",
         ],
+        quiz: {
+          question:
+            "What is the primary purpose of benchmarking talent acquisition metrics?",
+          options: [
+            "To increase the number of hires",
+            "To identify areas for improvement and competitive positioning",
+            "To eliminate the need for metrics",
+            "To reduce the cost of hiring",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "td-6",
@@ -706,19 +1050,17 @@ export const modules: Module[] = [
           "Reduces long-term turnover costs.",
           "Links hiring to employee lifecycle.",
         ],
-        quiz: [
-          {
-            question:
-              "How does retention analytics most effectively improve hiring processes?",
-            options: [
-              "By prioritizing short-term cost reductions",
-              "By identifying turnover patterns to refine hiring criteria",
-              "By focusing solely on time-to-fill metrics",
-              "By eliminating onboarding adjustments",
-            ],
-            correctAnswerIndex: 1,
-          },
-        ],
+        quiz: {
+          question:
+            "How does retention analytics most effectively improve hiring processes?",
+          options: [
+            "By prioritizing short-term cost reductions",
+            "By identifying turnover patterns to refine hiring criteria",
+            "By focusing solely on time-to-fill metrics",
+            "By eliminating onboarding adjustments",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
     ],
   },
@@ -737,6 +1079,17 @@ export const modules: Module[] = [
           "Automates administrative tasks.",
           "Choose based on your needs and scale.",
         ],
+        quiz: {
+          question:
+            "What is the primary function of an Applicant Tracking System (ATS)?",
+          options: [
+            "To conduct interviews",
+            "To centralize candidate data and automate workflows",
+            "To manage employee payroll",
+            "To create job descriptions",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "tt-2",
@@ -747,6 +1100,17 @@ export const modules: Module[] = [
           "Creates talent pipelines for future needs.",
           "Personalizes communication at scale.",
         ],
+        quiz: {
+          question:
+            "What is the primary purpose of a Candidate Relationship Management (CRM) system in talent acquisition?",
+          options: [
+            "To manage active job applications",
+            "To build and maintain long-term relationships with candidates",
+            "To conduct interviews",
+            "To track employee performance",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "tt-3",
@@ -757,6 +1121,17 @@ export const modules: Module[] = [
           "24/7 candidate engagement.",
           "Allows recruiters to focus on strategy.",
         ],
+        quiz: {
+          question:
+            "What is a primary benefit of using AI-powered tools in talent acquisition?",
+          options: [
+            "They eliminate the need for human recruiters",
+            "They automate repetitive tasks and enhance candidate experience",
+            "They replace Applicant Tracking Systems (ATS)",
+            "They only focus on resume screening",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "tt-4",
@@ -767,6 +1142,17 @@ export const modules: Module[] = [
           "Involve end-users in selection.",
           "Measure impact post-implementation.",
         ],
+        quiz: {
+          question:
+            "What is a key factor for successful technology implementation in talent acquisition?",
+          options: [
+            "Ignoring user feedback",
+            "Effective change management and user training",
+            "Focusing solely on cost reduction",
+            "Implementing technology without planning",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "tt-5",
@@ -777,6 +1163,17 @@ export const modules: Module[] = [
           "Supports asynchronous evaluations.",
           "Improves candidate accessibility.",
         ],
+        quiz: {
+          question:
+            "What is a primary benefit of using video interviewing tools in talent acquisition?",
+          options: [
+            "They eliminate the need for human recruiters",
+            "They enable remote and asynchronous interviews",
+            "They replace Applicant Tracking Systems (ATS)",
+            "They only focus on resume screening",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "tt-6",
@@ -787,19 +1184,17 @@ export const modules: Module[] = [
           "Enables comprehensive analytics.",
           "Streamlines recruiter workflows.",
         ],
-        quiz: [
-          {
-            question:
-              "What is the primary benefit of integrating the HR tech stack for talent acquisition?",
-            options: [
-              "Increasing manual data entry tasks",
-              "Reducing data silos for holistic analytics",
-              "Limiting recruiter access to candidate data",
-              "Slowing down workflow automation",
-            ],
-            correctAnswerIndex: 1,
-          },
-        ],
+        quiz: {
+          question:
+            "What is the primary benefit of integrating the HR tech stack for talent acquisition?",
+          options: [
+            "Increasing manual data entry tasks",
+            "Reducing data silos for holistic analytics",
+            "Limiting recruiter access to candidate data",
+            "Slowing down workflow automation",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
     ],
   },
@@ -818,6 +1213,17 @@ export const modules: Module[] = [
           "Requires new assessment criteria.",
           "Onboarding and culture need adaptation.",
         ],
+        quiz: {
+          question:
+            "What is a primary benefit of remote work for organizations?",
+          options: [
+            "Limited access to local talent",
+            "Increased geographical barriers",
+            "Access to global talent markets",
+            "Reduced need for technology",
+          ],
+          correctAnswerIndex: 2,
+        },
       },
       {
         id: "ft-2",
@@ -828,6 +1234,16 @@ export const modules: Module[] = [
           "Better aligns skills with needs.",
           "Requires robust skills assessment.",
         ],
+        quiz: {
+          question: "What is a primary benefit of skills-based hiring?",
+          options: [
+            "It focuses solely on formal education.",
+            "It expands potential talent pools by valuing diverse experiences.",
+            "It limits hiring to traditional candidates.",
+            "It ignores practical skills in favor of degrees.",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ft-3",
@@ -838,6 +1254,16 @@ export const modules: Module[] = [
           "Business knowledge becomes essential.",
           "Technology handles transactional tasks.",
         ],
+        quiz: {
+          question: "What is a key aspect of the evolving role of recruiters?",
+          options: [
+            "Focusing solely on filling open positions",
+            "Acting as strategic advisors aligned with business goals",
+            "Avoiding data analysis in hiring decisions",
+            "Limiting collaboration with other departments",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ft-4",
@@ -848,6 +1274,17 @@ export const modules: Module[] = [
           "Audit algorithms for bias.",
           "Maintain human oversight.",
         ],
+        quiz: {
+          question:
+            "What is a primary ethical concern in technology-driven talent acquisition?",
+          options: [
+            "Increased manual data entry",
+            "Algorithmic bias and data privacy",
+            "Reduced candidate diversity",
+            "Lack of transparency in hiring processes",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ft-5",
@@ -858,6 +1295,17 @@ export const modules: Module[] = [
           "Simulations test real-world skills.",
           "Requires investment in new tech.",
         ],
+        quiz: {
+          question:
+            "What is a primary benefit of using the metaverse in recruitment?",
+          options: [
+            "Limited access to global talent",
+            "Enhanced candidate engagement through immersive experiences",
+            "Reduced need for technical skills assessments",
+            "Increased reliance on traditional job fairs",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
       {
         id: "ft-6",
@@ -868,19 +1316,17 @@ export const modules: Module[] = [
           "Flexibility is a key differentiator.",
           "Transparency builds candidate trust.",
         ],
-        quiz: [
-          {
-            question:
-              "How does emphasizing employee well-being in hiring influence organizational competitiveness?",
-            options: [
-              "By reducing candidate attraction",
-              "By attracting top talent through flexible offerings",
-              "By increasing employee turnover",
-              "By limiting focus on mental health support",
-            ],
-            correctAnswerIndex: 1,
-          },
-        ],
+        quiz: {
+          question:
+            "How does emphasizing employee well-being in hiring influence organizational competitiveness?",
+          options: [
+            "By reducing candidate attraction",
+            "By attracting top talent through flexible offerings",
+            "By increasing employee turnover",
+            "By limiting focus on mental health support",
+          ],
+          correctAnswerIndex: 1,
+        },
       },
     ],
   },

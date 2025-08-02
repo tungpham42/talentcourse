@@ -17,6 +17,13 @@ export default function LessonModal({ show, onHide, lesson }: Props) {
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedVoice, setSelectedVoice] =
     useState<SpeechSynthesisVoice | null>(null);
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+
+  const handleSelectAnswer = (index: number) => {
+    if (selectedAnswer === null) {
+      setSelectedAnswer(index);
+    }
+  };
 
   useEffect(() => {
     const loadVoices = () => {
@@ -38,6 +45,15 @@ export default function LessonModal({ show, onHide, lesson }: Props) {
 
     loadVoices();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (!show) {
+      setSelectedAnswer(null);
+      stop();
+      setRate(1);
+      setSelectedVoice(null);
+    }
+  }, [show]);
 
   const handlePlay = () => {
     if (!lesson) return;
@@ -81,6 +97,43 @@ export default function LessonModal({ show, onHide, lesson }: Props) {
                 <li key={idx}>{point}</li>
               ))}
             </ul>
+          </>
+        )}
+        {lesson.quiz && (
+          <>
+            <h5 className="mt-4">Quiz</h5>
+            <div className="mb-4">
+              <strong>{lesson.quiz.question}</strong>
+              <Form>
+                {lesson.quiz.options.map((opt, idx) => (
+                  <Form.Check
+                    key={idx}
+                    type="radio"
+                    name="quiz"
+                    id={`quiz-opt-${idx}`}
+                    label={opt}
+                    checked={selectedAnswer === idx}
+                    onChange={() => handleSelectAnswer(idx)}
+                    disabled={selectedAnswer !== null}
+                  />
+                ))}
+              </Form>
+              {selectedAnswer !== null && (
+                <div
+                  className={`mt-2 ${
+                    selectedAnswer === lesson.quiz.correctAnswerIndex
+                      ? "text-success"
+                      : "text-danger"
+                  }`}
+                >
+                  {selectedAnswer === lesson.quiz.correctAnswerIndex
+                    ? "Correct!"
+                    : `Incorrect. Correct answer: ${
+                        lesson.quiz.options[lesson.quiz.correctAnswerIndex]
+                      }`}
+                </div>
+              )}
+            </div>
           </>
         )}
         <Form.Group className="mb-3">
