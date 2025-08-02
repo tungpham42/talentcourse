@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVolumeUp, faStop, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faVolumeUp,
+  faPause,
+  faStop,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 import { Lesson } from "../data/modules";
 import { speak, stop, getVoices } from "../utils/tts";
 import striptags from "striptags";
@@ -12,12 +17,15 @@ interface Props {
   lesson: Lesson | null;
 }
 
+type PlayState = "start" | "pause" | "resume";
+
 export default function LessonModal({ show, onHide, lesson }: Props) {
   const [rate, setRate] = useState(1);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedVoice, setSelectedVoice] =
     useState<SpeechSynthesisVoice | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const [playState, setPlayState] = useState<PlayState>("start");
 
   const handleSelectAnswer = (index: number) => {
     if (selectedAnswer === null) {
@@ -50,27 +58,43 @@ export default function LessonModal({ show, onHide, lesson }: Props) {
     if (!show) {
       setSelectedAnswer(null);
       stop();
+      setPlayState("start");
       setRate(1);
       setSelectedVoice(null);
     }
   }, [show]);
 
-  const handlePlay = () => {
+  const handleTogglePlay = () => {
     if (!lesson) return;
-    const plainText = striptags(lesson.content);
-    let textToRead = plainText;
 
-    if (lesson.keyTakeaways?.length) {
-      const takeawaysText =
-        "Key takeaways: " +
-        lesson.keyTakeaways.map((point, i) => `${i + 1}. ${point}`).join(". ");
-      textToRead += ". " + takeawaysText;
+    if (playState === "start") {
+      const plainText = striptags(lesson.content);
+      let textToRead = plainText;
+
+      if (lesson.keyTakeaways?.length) {
+        const takeawaysText =
+          "Key takeaways: " +
+          lesson.keyTakeaways
+            .map((point, i) => `${i + 1}. ${point}`)
+            .join(". ");
+        textToRead += ". " + takeawaysText;
+      }
+
+      speak(textToRead, rate, selectedVoice || undefined);
+      setPlayState("pause");
+    } else if (playState === "pause") {
+      window.speechSynthesis.pause();
+      setPlayState("resume");
+    } else if (playState === "resume") {
+      window.speechSynthesis.resume();
+      setPlayState("pause");
     }
-
-    speak(textToRead, rate, selectedVoice || undefined);
   };
 
-  const handleStop = () => stop();
+  const handleStop = () => {
+    stop();
+    setPlayState("start");
+  };
 
   if (!lesson) return null;
 
@@ -80,6 +104,7 @@ export default function LessonModal({ show, onHide, lesson }: Props) {
       show={show}
       onHide={() => {
         stop();
+        setPlayState("start");
         onHide();
       }}
       centered
@@ -167,9 +192,16 @@ export default function LessonModal({ show, onHide, lesson }: Props) {
         </Form.Group>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary" onClick={handlePlay}>
-          <FontAwesomeIcon icon={faVolumeUp} className="me-2" />
-          Listen
+        <Button variant="primary" onClick={handleTogglePlay}>
+          <FontAwesomeIcon
+            icon={playState === "pause" ? faPause : faVolumeUp}
+            className="me-2"
+          />
+          {playState === "start"
+            ? "Play"
+            : playState === "pause"
+            ? "Pause"
+            : "Resume"}
         </Button>
         <Button variant="danger" onClick={handleStop}>
           <FontAwesomeIcon icon={faStop} className="me-2" />
@@ -179,6 +211,7 @@ export default function LessonModal({ show, onHide, lesson }: Props) {
           variant="secondary"
           onClick={() => {
             stop();
+            setPlayState("start");
             onHide();
           }}
         >
