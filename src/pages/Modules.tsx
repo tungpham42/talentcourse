@@ -13,7 +13,7 @@ export default function ModulesPage() {
   };
 
   return (
-    <Container className="mt-4">
+    <Container className="mt-5">
       <h1>Strategic Talent Acquisition Guide</h1>
       {modules.map((mod) => (
         <Card className="mb-3" key={mod.id}>
